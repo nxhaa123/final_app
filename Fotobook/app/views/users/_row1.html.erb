@@ -1,0 +1,17 @@
+<% if current_user.albums.any? %>
+
+<% for i in 0...current_user.albums.size %>
+
+<div class="col-lg-3 p-3">
+   <%= image_tag new_arr1(current_user)[i],Alt: "anh2",class: "card-img-top openImageDialog thumbnail anh2" ,href:  '#gardenImage' ,data: { id: new_arr1(current_user)[i],toggle: 'modal' }%>
+
+   <div class="card-body">
+     <div class="card-title">
+       Photo title gose here1
+     </div>
+   </div>
+</div>
+
+<% end %>
+<% end %>
+

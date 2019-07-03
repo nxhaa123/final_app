@@ -1,0 +1,143 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <!-- Bootstrap CSS -->
+  <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js" %>
+  <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/additional-methods.min.js" %>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <title>Fotobook</title>
+</head>
+<body>
+
+  <!-- header -->
+  <nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Fotobook</a>
+      <!-- form search -->
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Photo/Album" aria-label="Search">
+      </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto" >
+          <li class="nav-item">
+            <a class="nav-link scroll-link text-light" href="#section-1">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid text-center">
+   <div class="row content">
+    <div class="col-lg-2 col-2 col-sm-2 col-xl-2" >
+     <!-- <p><a href="#">Feeds </a></p>
+     <p><a href="#">Discover</a></p> -->
+   </div>
+   <div class="col-lg-8 col-8">
+    <div class="row">
+      <div class="col-lg-12">  <h1 class="text-center login-title text-primary  d-inline-flex p-2 " >Fotobook Login</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-2 col-lg-2 col-2"></div>
+            <div class="col-sm-12 col-lg-8 col-12 logos d-inline-flex p-0">
+
+              <img class="logo-social rounded-circle" src="/assets/logo-gg.png">
+              <img class="logo-social rounded-circle" src="/assets/logo-fb.png">
+              <img  class="logo-social rounded-circle" src="/assets/logo-tw.jpg">
+
+
+            </div>
+
+            <div class="col-sm-2 col-lg-2 col-md-2 col-md-offset-2"></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-2"></div>
+      <div class="col-lg-8 col-8">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-2 col-lg-2 col-md-2 col-md-offset-2"></div>
+            <div class="col-sm-12 col-lg-8  col-md-8 col-12 ">
+
+              <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                alt="login block">
+                <p id='alert'><%= alert %></p>
+                <h1>Login</h1>
+                <%= form_tag sessions_path, :html => {class: 'form-signin' } do |form| %>
+                <div class='form-control field'>
+                  <%= text_field_tag :email, "Email" %>
+                </div>
+                <div class='form-control field'>
+                  <%= password_field_tag :password,"password".to_s %>
+                </div>
+                <div class='form-control actions'>
+                  <%= submit_tag 'Login'%>
+                </div>
+                <% end %>
+                <!-- <form class="form-signin">
+                  <input type="Email" class="form-control" placeholder="Email" required autofocus>
+                  <input type="password" class="form-control" placeholder="Password" required>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">
+                  Sign in</button>
+                  <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                  </label>
+                  <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                </form> -->
+              </div>
+              <a href="#" class="text-center new-account">Create an account </a>
+            </div>
+          </div>
+        </div></div>
+        <div class="col-sm-2 col-lg-2 col-md-2 col-md-offset-2"></div>
+      </div>
+    </div>
+
+
+    <div class="col-md-2" ></div>
+  </div>
+
+</div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
